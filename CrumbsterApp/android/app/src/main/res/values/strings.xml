@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CrumbsterApp</string>
+    <string name="title_activity_main">CrumbsterApp</string>
+    <string name="package_name">com.crumbster.app</string>
+    <string name="custom_url_scheme">com.crumbster.app</string>
+</resources>

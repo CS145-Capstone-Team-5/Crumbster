@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "151194500464",
+    "project_id": "crumbster-626ff",
+    "storage_bucket": "crumbster-626ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151194500464:android:dfbdc1cbfe48c41ade23b5",
+        "android_client_info": {
+          "package_name": "com.crumbster.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151194500464-sqcrpp0l0slq0r02bvabho5pku0b8e5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIMkI07hOmYpb4v_NSmT0_BP9GdGK-lE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151194500464-sqcrpp0l0slq0r02bvabho5pku0b8e5o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
