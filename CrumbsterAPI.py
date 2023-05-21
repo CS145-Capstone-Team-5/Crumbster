@@ -1,9 +1,15 @@
 from flask import Flask, request, jsonify, make_response
 from flask_restful import Resource, Api
+
+from flask_cors import CORS, cross_origin
+
 import random
 
 app = Flask("__name__")
 api = Api(app)
+
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Sample Dictionary storing the fun facts and tips to be displayed
 facts_tips = {

@@ -25,3 +25,12 @@
 #container a {
   text-decoration: none;
 }
+
+.styled-button {
+  --background: rgb(21, 139, 139);
+  --color: white;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+}
