@@ -12,7 +12,7 @@ export interface Data {
 })
 export class IonicBackendService {
   public pressedOnce: number = 0;
-  private url: string = 'http://192.168.1.10:5000/'
+  private url: string = 'http://192.168.173.157:5000/'
   constructor(private http: HttpClient) { }
 
   getApi(): Observable<Data> {

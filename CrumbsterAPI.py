@@ -39,5 +39,5 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 ## COMMAND TO RUN (on Windows Terminal):
-#   >> python -m flask --app CrumbsterAPI run --host=192.168.68.107
+#   >> python -m flask --app CrumbsterAPI run --host=192.168.173.157
 #   note: replace 192.168.68.107 with IPv4 address of network from device's POV

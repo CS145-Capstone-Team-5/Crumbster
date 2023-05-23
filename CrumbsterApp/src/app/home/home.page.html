@@ -18,5 +18,8 @@
       <ng-template #thenBlock>{{obtainedData.fact || obtainedData.tip}}.</ng-template>
       <ng-template #elseBlock>Nothing to show</ng-template>
     </ion-row>
+    <ion-row class="ion-padding">
+      <ion-textarea [(ngModel)]="token"></ion-textarea>
+    </ion-row>
   </ion-grid>
 </ion-content>
