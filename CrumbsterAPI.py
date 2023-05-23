@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, make_response
 from flask_restful import Resource, Api
 import random
+from firebase_admin import messaging 
+from notifs import message
 
 app = Flask("__name__")
 api = Api(app)
@@ -18,12 +20,14 @@ facts_tips = {
 # Retrieval of random fun fact or tip 
 class Info(Resource):
     def get(self):
+        messaging.send(message)
         Msg = random.choice(list(facts_tips.values()))
         return jsonify(Msg)
     
 # Simulation of Load Sensor data retrieval
 class Log(Resource):
     def get(self):
+        messaging.send(message)
         return jsonify(str(random.randrange(0,10))+'kg')
     
 api.add_resource(Info, '/')
