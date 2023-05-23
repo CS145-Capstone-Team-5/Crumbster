@@ -14,8 +14,3 @@ message = messaging.Message(
     token=registration_token,
 )
 
-# Send a message to the device corresponding to the provided
-# registration token.
-response = messaging.send(message)
-# Response is a message ID string.
-print('Successfully sent message:', response)
