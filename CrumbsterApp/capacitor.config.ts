@@ -5,7 +5,8 @@ const config: CapacitorConfig = {
   appName: 'CrumbsterApp',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'http', // Android would use http instead of https
+    'cleartext': true      // Allows us to to use http urls
   },
   plugins: {
     PushNotifications: {
