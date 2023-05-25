@@ -6,6 +6,7 @@ import {
   PushNotifications,
   Token,
 } from '@capacitor/push-notifications';
+import { IonicBackendService } from '../ionic-backend.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,19 @@ import {
 })
 
 export class HomePage {
-  constructor() {}
+  public obtainedData!: string;
+  public token: string = "";
+
+  constructor(private _api: IonicBackendService, private _buttonPressedOnce: IonicBackendService) { }
+
+  // Method called to obtain data from the server via HTTP GET
+  callGetApi() {
+    this._api.getApi()
+      .subscribe(data => this.obtainedData = JSON.stringify(data.fact) || JSON.stringify(data.tip));
+    if (this.obtainedData === null || this.obtainedData === undefined) {
+      this.obtainedData = "Obtaining data..."
+    }
+  }
 
   ngOnInit() {
     console.log('Initializing HomePage');
