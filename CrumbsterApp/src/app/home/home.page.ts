@@ -15,19 +15,9 @@ import { IonicBackendService } from '../ionic-backend.service';
 })
 
 export class HomePage {
-  public obtainedData!: string;
   public token: string = "";
 
-  constructor(private _api: IonicBackendService, private _buttonPressedOnce: IonicBackendService) { }
-
-  // Method called to obtain data from the server via HTTP GET
-  callGetApi() {
-    this._api.getApi()
-      .subscribe(data => this.obtainedData = JSON.stringify(data.fact) || JSON.stringify(data.tip));
-    if (this.obtainedData === null || this.obtainedData === undefined) {
-      this.obtainedData = "Obtaining data..."
-    }
-  }
+  constructor() { }
 
   ngOnInit() {
     console.log('Initializing HomePage');

@@ -16,8 +16,20 @@ Note: *To be updated.*
   <li>Python3</li>
   <li>Flask</li>
   <li>Flask_RESTful</li>
+  <li>firebase_admin</li>
   </ul>
 </ul>
+
+# Setting up the notifications (FCM)
+<ol>
+  <li>Obtaining the Service Account Key</li>
+  <ol>
+    <li>In the Firebase Project's console, open Settings > Service Accounts</li>
+    <li>Click Generate New Private Key, and Generate Key</li>
+  </ol>
+  <li>Store the obtained key, copy the path to it and replace PATH-TO-SERVICE-ACCOUNT-KEY in notifs.py</li>
+  <li>Copy one's token (obtained from running the app) and replace REGISTRATION-TOKEN in notifs.py</li>
+</ol>
 
 # Running the server (Windows)
 <ol>
