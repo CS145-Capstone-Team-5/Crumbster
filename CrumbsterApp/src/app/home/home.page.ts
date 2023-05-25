@@ -15,7 +15,8 @@ import { IonicBackendService } from '../ionic-backend.service';
 })
 
 export class HomePage {
-  public obtainedData!: string;
+  public factsOrTips!: string;
+  public weight!: string;
   public token: string = "";
 
   constructor(private _api: IonicBackendService, private _buttonPressedOnce: IonicBackendService) { }
@@ -23,9 +24,16 @@ export class HomePage {
   // Method called to obtain data from the server via HTTP GET
   callGetApi() {
     this._api.getApi()
-      .subscribe(data => this.obtainedData = JSON.stringify(data.fact) || JSON.stringify(data.tip));
-    if (this.obtainedData === null || this.obtainedData === undefined) {
-      this.obtainedData = "Obtaining data..."
+      .subscribe(data => {
+        this.factsOrTips = JSON.stringify(data.fact) || JSON.stringify(data.tip)
+        this.weight = JSON.stringify(data.dataLog).replace(/["]+/g, '')
+      });
+    if (this.factsOrTips === null || this.factsOrTips === undefined) {
+      this.factsOrTips = ""
+    }
+    this.factsOrTips.replace(/["]+/g, '');
+    if (this.weight === null || this.weight === undefined) {
+      this.weight = ""
     }
   }
 

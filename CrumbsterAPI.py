@@ -3,9 +3,14 @@ from flask_restful import Resource, Api
 import random
 from firebase_admin import messaging 
 from notifs import message
+from flask_cors import CORS, cross_origin
 
 app = Flask("__name__")
 api = Api(app)
+
+# Ensures that the mobile app can retrieve data from the server
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Sample Dictionary storing the fun facts and tips to be displayed
 facts_tips = {
@@ -21,7 +26,6 @@ facts_tips = {
 wasteLvls = {
     'curLvl': {'dataLog': "0"}
 }
-
 
 # Retrieval of random fun fact or tip 
 class Info(Resource):

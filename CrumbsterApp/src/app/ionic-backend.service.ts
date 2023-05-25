@@ -6,6 +6,7 @@ import { catchError, map } from 'rxjs/operators';
 export interface Data {
   fact: string;
   tip: string;
+  dataLog: string;
 }
 
 @Injectable({
