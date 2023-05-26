@@ -1,4 +1,5 @@
-<ion-header [translucent]="true">
+<!-- Kept for now
+  <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">
       <ion-icon name="fast-food-outline"></ion-icon> Crumbster
@@ -15,6 +16,30 @@
     </ion-row>
     <ion-row class="ion-padding">
       <ion-textarea [(ngModel)]="token"></ion-textarea>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+<ion-content style="height: 100%">
+  <ion-grid [fixed]="true"
+    style="height:100%; display:flex; flex-direction: column; justify-content: space-around; padding-top: 30%; padding-bottom: 30%;">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="9" size-sm="6" class="ion-text-center">
+        <div id="homeTopText">track your <br> food waste with</div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="9" size-sm="6"><ion-img
+          src=" ../../assets/homepageElements/textLogo.png"></ion-img></ion-col></ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="6" size-sm="4"><ion-img
+          src=" ../../assets/homepageElements/graphicLogo.png"></ion-img></ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="container" size-xs="8" size-sm="5"><ion-img
+          src="../../assets/homepageElements/generateReportButton.png" id="reportButton"
+          [routerLink]="['./', 'report']"></ion-img>
+        <div id="buttonLabel">generate daily report</div>
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

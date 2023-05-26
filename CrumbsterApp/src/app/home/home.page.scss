@@ -25,3 +25,33 @@
 #container a {
   text-decoration: none;
 }
+
+// CSS custom properties
+ion-content::part(background) {
+  background: #0f4e7d;
+}
+
+#homeTopText {
+  font-family: "NyataRegular";
+  color: #ff9520;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  font-size: 1.2em;
+}
+
+#buttonLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49%, -50%);
+  font-family: "NyataRegular";
+  color: #f8f6e7;
+  letter-spacing: 1.5px;
+  font-size: 1.2em;
+  width: 200px;
+}
+
+#reportButton:hover {
+  opacity: 0.8;
+  transition: 0.25s ease;
+}
