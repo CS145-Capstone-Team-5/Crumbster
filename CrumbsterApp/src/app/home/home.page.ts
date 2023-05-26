@@ -49,17 +49,17 @@ export class HomePage {
     );
 
     // Show us the notification payload if the app is open on our device
-    PushNotifications.addListener('pushNotificationReceived',
-      (notification: PushNotificationSchema) => {
-        alert('Push received: ' + JSON.stringify(notification));
-      }
-    );
+    // PushNotifications.addListener('pushNotificationReceived',
+    //   (notification: PushNotificationSchema) => {
+    //     alert('Push received: ' + JSON.stringify(notification));
+    //   }
+    // );
 
     // Method called when tapping on a notification
-    PushNotifications.addListener('pushNotificationActionPerformed',
-      (notification: ActionPerformed) => {
-        alert('Push action performed: ' + JSON.stringify(notification));
-      }
-    );
+    // PushNotifications.addListener('pushNotificationActionPerformed',
+    //   (notification: ActionPerformed) => {
+    //     alert('Push action performed: ' + JSON.stringify(notification));
+    //   }
+    // );
   }
 }
