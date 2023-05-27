@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.crumbster.app',
-  appName: 'CrumbsterApp',
+  appName: 'Crumbster',
   webDir: 'www',
   server: {
     androidScheme: 'http', // Android would use http instead of https
