@@ -26,7 +26,7 @@
   text-decoration: none;
 }
 
-// CSS custom properties
+// CSS custom properties; Only configured for mobile
 ion-content::part(background) {
   background: #0f4e7d;
 }
@@ -53,6 +53,60 @@ ion-content::part(background) {
 
 .buttonContainer:hover,
 .buttonContainer:active {
-  opacity: 0.7;
+  opacity: 0.8;
   transition: 0.25s ease;
+}
+
+.alert {
+  position: absolute;
+  top: 0px;
+}
+
+#alertBanner {
+  width: 101%;
+  left: -2px;
+}
+
+#closeIcon {
+  width: 40px;
+}
+
+/* Vertical mode */
+@media screen and (hover:none) and (max-width:576px) {
+  .content {
+    padding-top: 30%;
+    padding-bottom: 30%;
+  }
+
+  #alertBanner {
+    object-fit: cover;
+    transform: scale(1) translate(0, -15%);
+  }
+}
+
+/* Horizontal mode */
+@media screen and (hover:none) and (min-width:577px) and (max-width:992px) {
+  #alertBanner {
+    position: absolute;
+    top: 0%;
+    width: 101%;
+    object-fit: cover;
+    transform: scale(1) translate(0, -55%);
+  }
+
+  .content {
+    padding-top: 35%;
+    padding-bottom: 35%
+  }
+
+  #buttonLabel {
+    font-size: 0.8em;
+    width: 150px;
+    transform: translate(-48%, -50%);
+  }
+
+  #closeIcon {
+    top: 10%;
+    left: 90%;
+  }
 }

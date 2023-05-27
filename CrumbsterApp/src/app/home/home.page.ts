@@ -15,7 +15,25 @@ import { IonicBackendService } from '../ionic-backend.service';
 })
 
 export class HomePage {
+  // App changes depending on the current time of the day
+  private date: Date = new Date();
+  public currentTime: number = this.date.getHours();
+  public cutoffTime: number = 13;
+  public visibleAlert: boolean = false;
+
   public token: string = "";
+
+  addAlert() {
+    if (this.visibleAlert === false) {
+      this.visibleAlert = true;
+    }
+  }
+
+  removeAlert() {
+    if (this.visibleAlert === true) {
+      this.visibleAlert = false;
+    }
+  }
 
   constructor() { }
 
@@ -49,17 +67,17 @@ export class HomePage {
     );
 
     // Show us the notification payload if the app is open on our device
-    PushNotifications.addListener('pushNotificationReceived',
-      (notification: PushNotificationSchema) => {
-        alert('Push received: ' + JSON.stringify(notification));
-      }
-    );
+    //PushNotifications.addListener('pushNotificationReceived',
+    //  (notification: PushNotificationSchema) => {
+    //    alert('Push received: ' + JSON.stringify(notification));
+    //  }
+    //);
 
     // Method called when tapping on a notification
-    PushNotifications.addListener('pushNotificationActionPerformed',
-      (notification: ActionPerformed) => {
-        alert('Push action performed: ' + JSON.stringify(notification));
-      }
-    );
+    //PushNotifications.addListener('pushNotificationActionPerformed',
+    //  (notification: ActionPerformed) => {
+    //    alert('Push action performed: ' + JSON.stringify(notification));
+    //  }
+    //);
   }
 }
