@@ -51,7 +51,8 @@ ion-content::part(background) {
   width: 200px;
 }
 
-#reportButton:hover {
-  opacity: 0.8;
+.buttonContainer:hover,
+.buttonContainer:active {
+  opacity: 0.7;
   transition: 0.25s ease;
 }
