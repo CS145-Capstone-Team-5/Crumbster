@@ -17,6 +17,7 @@ Note: *To be updated.*
   <li>Flask</li>
   <li>Flask_RESTful</li>
   <li>firebase_admin</li>
+  <li>APScheduler</li>
   </ul>
 </ul>
 

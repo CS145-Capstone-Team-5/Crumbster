@@ -4,6 +4,8 @@ import random
 from firebase_admin import messaging 
 from notifs import message
 from flask_cors import CORS, cross_origin
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.cron import CronTrigger
 
 app = Flask("__name__")
 api = Api(app)
@@ -30,8 +32,6 @@ wasteLvls = {
 # Retrieval of random fun fact or tip 
 class Info(Resource):
     def get(self):
-        response = messaging.send(message)
-        print('Successfully sent message:', response)
         Msg = random.choice(list(facts_tips.values()))
         latestLog = Log()
         return jsonify(Msg | latestLog.get())
@@ -39,8 +39,6 @@ class Info(Resource):
 # Simulation of Load Sensor data retrieval
 class Log(Resource):
     def get(self):
-        response = messaging.send(message)
-        print('Successfully sent message:', response)
         return wasteLvls['curLvl']
     
     def put(self):
@@ -51,8 +49,20 @@ class Log(Resource):
 api.add_resource(Info, '/')
 api.add_resource(Log, '/log')
 
+def sendNotif():
+    response = messaging.send(message)
+    print('Successfully sent message:', response)
+
+# Sending a notification every specified interval/at a specific time daily
+scheduler = BackgroundScheduler()
+
+trigger = CronTrigger(year="*", month="*", day="*", hour="18", minute="0", second="0")
+scheduler.add_job(sendNotif, 'interval', minutes=1)
+scheduler.start()
+
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 ## COMMAND TO RUN (on Windows Terminal):
 #   >> python -m flask --app CrumbsterAPI run --host=192.168.68.107
