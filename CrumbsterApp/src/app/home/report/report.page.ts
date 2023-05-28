@@ -17,12 +17,12 @@ export class ReportPage implements OnInit {
     this._api.getApi()
       .subscribe(data => {
         this.factsOrTips = JSON.stringify(data.fact) || JSON.stringify(data.tip)
+        this.factsOrTips = this.factsOrTips.replace(/["]+/g, '');
         this.weight = JSON.stringify(data.dataLog).replace(/["]+/g, '')
       });
     if (this.factsOrTips === null || this.factsOrTips === undefined) {
       this.factsOrTips = ""
     }
-    this.factsOrTips.replace(/["]+/g, '');
     if (this.weight === null || this.weight === undefined) {
       this.weight = ""
     }

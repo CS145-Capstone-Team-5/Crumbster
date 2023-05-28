@@ -1,0 +1,28 @@
+ion-content::part(background) {
+  background: #0f4e7d;
+}
+
+ion-back-button {
+  color: #f8f6e7;
+}
+
+.heading {
+  color: #ff9520;
+  font-size: 1.8em;
+  font-family: "Abyss";
+  letter-spacing: 1.5px;
+  padding-top: 10%;
+}
+
+.factsOrTips,
+.weight {
+  color: #f8f6e7;
+  font-size: 1.4em;
+  font-family: "NyataRegular";
+  padding: 30px 30px 16px 30px;
+  line-height: 1.5;
+}
+
+.factsOrTips {
+  font-size: 1.1em;
+}
