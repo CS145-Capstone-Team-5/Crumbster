@@ -1,27 +1,22 @@
-<ion-header [translucent]="true">
-  <ion-toolbar style="height: 40px">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-  <ion-toolbar>
-    <ion-title class="ion-text-center">
-      <ion-icon name="fast-food-outline"></ion-icon> Crumbster Report
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-grid>
-    <ion-row class="ion-padding ion-justify-content-center">
-      <div *ngIf="factsOrTips !== undefined; then thenBlock else elseBlock"></div>
-      <ng-template #thenBlock>{{factsOrTips}}</ng-template>
-      <ng-template #elseBlock>Data is currently unavailable.</ng-template>
+    <ion-row>
+      <ion-buttons class="ion-padding">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
     </ion-row>
-    <ion-row class="ion-padding ion-justify-content-center">
-      <div *ngIf="weight !== undefined; then thenBlock2 else elseBlock2"></div>
+    <ion-row class="ion-padding ion-justify-content-center heading">
+      Crumbster Report
+    </ion-row>
+    <ion-row class="ion-padding ion-justify-content-center ion-text-center weight">
+      <div *ngIf="weight !== undefined && weight !== ''; then thenBlock2 else elseBlock2"></div>
       <ng-template #thenBlock2>The amount of food waste you have today is {{weight}} grams</ng-template>
       <ng-template #elseBlock2></ng-template>
+    </ion-row>
+    <ion-row class="ion-padding ion-justify-content-center ion-text-center factsOrTips">
+      <div *ngIf="factsOrTips !== undefined && factsOrTips !== ''; then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>{{factsOrTips}}</ng-template>
+      <ng-template #elseBlock>Data is currently unavailable.</ng-template>
     </ion-row>
   </ion-grid>
 </ion-content>
