@@ -6,23 +6,32 @@ ion-back-button {
   color: #f8f6e7;
 }
 
-.heading {
-  color: #ff9520;
-  font-size: 1.8em;
-  font-family: "Abyss";
-  letter-spacing: 1.5px;
-  padding-top: 10%;
-}
-
-.factsOrTips,
+// Configured for Oppo A5 2020
 .weight {
-  color: #f8f6e7;
-  font-size: 1.4em;
+  position: absolute;
+  color: black;
+  font-size: 1em;
   font-family: "NyataRegular";
-  padding: 30px 30px 16px 30px;
-  line-height: 1.5;
+  line-height: 1.2;
+  width: 100px;
+  top: 20.5%;
+  left: 46%;
 }
 
-.factsOrTips {
-  font-size: 1.1em;
+.fact {
+  position: absolute;
+  color: black;
+  font-size: 0.55em;
+  width: 100px;
+  top: 42%;
+  left: 15%;
+}
+
+.tip {
+  position: absolute;
+  color: black;
+  font-size: 0.40em;
+  width: 110px;
+  top: 53.5%;
+  left: 53%;
 }
