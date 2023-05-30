@@ -18,7 +18,7 @@ export class HomePage {
   // App changes depending on the current time of the day
   private date: Date = new Date();
   public currentTime: number = this.date.getHours();
-  public cutoffTime: number = 13;
+  public cutoffTime: number = 1;
   public visibleAlert: boolean = false;
 
   public token: string = "";
