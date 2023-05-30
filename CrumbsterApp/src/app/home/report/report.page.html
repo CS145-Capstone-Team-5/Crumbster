@@ -8,18 +8,18 @@
     <ion-row style="height:100%; display:flex; align-items: center; justify-content: center;">
       <ion-img class="backgroundImage" src="assets/homepageElements/crumbsterReport.png"></ion-img>
       <ion-col class="weight ion-text-center">
-        <div *ngIf="weight !== undefined && weight !== ''; then thenBlock2 else elseBlock2"></div>
-        <ng-template #thenBlock2>{{weight}} <br>grams</ng-template>
-        <ng-template #elseBlock2></ng-template>
+        <div *ngIf="weight !== undefined && weight !== ''; then thenBlock1 else elseBlock1"></div>
+        <ng-template #thenBlock1>{{weight}} <br>grams</ng-template>
+        <ng-template #elseBlock1></ng-template>
       </ion-col>
       <ion-col class="fact ion-text-center">
-        <div *ngIf="factsOrTips !== undefined && factsOrTips !== ''; then thenBlock else elseBlock"></div>
-        <ng-template #thenBlock>{{factsOrTips}}</ng-template>
-        <ng-template #elseBlock>Data is currently unavailable.</ng-template>
+        <div *ngIf="fact !== undefined && fact !== ''; then thenBlock2 else elseBlock2"></div>
+        <ng-template #thenBlock2>{{fact}}</ng-template>
+        <ng-template #elseBlock2>Data is currently unavailable.</ng-template>
       </ion-col>
       <ion-col class="tip ion-text-center">
-        <div *ngIf="factsOrTips !== undefined && factsOrTips !== ''; then thenBlock3 else elseBlock3"></div>
-        <ng-template #thenBlock3>{{factsOrTips}}</ng-template>
+        <div *ngIf="tip !== undefined && tip !== ''; then thenBlock3 else elseBlock3"></div>
+        <ng-template #thenBlock3>{{tip}}</ng-template>
         <ng-template #elseBlock3>Data is currently unavailable.</ng-template>
       </ion-col>
     </ion-row>
