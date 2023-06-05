@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 import random
-from notifs import dailyNotif, overNotif, maxNotif
+from notifs import dailyNotif, overNotif, maxNotif, putNotif
 from factsNtips import facts, tips
 from flask_cors import CORS, cross_origin
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -38,6 +38,8 @@ class Log(Resource):
 
         if (newLog-oldLog) >= 100:
             overNotif(str(newLog-oldLog))
+        else:
+            putNotif(str(newLog-oldLog))
         if newLog >= 3000:
             maxNotif()
         
