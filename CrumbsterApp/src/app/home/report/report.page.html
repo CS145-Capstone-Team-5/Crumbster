@@ -9,8 +9,12 @@
       <ion-img class="backgroundImage" src="assets/homepageElements/crumbsterReport.png"></ion-img>
       <ion-col class="weight ion-text-center">
         <div *ngIf="weight !== undefined && weight !== ''; then thenBlock1 else elseBlock1"></div>
-        <ng-template #thenBlock1>{{weight}} <br>grams</ng-template>
-        <ng-template #elseBlock1></ng-template>
+        <ng-template #thenBlock1>
+          <div *ngIf="weight === '1'; then nestedThen else nestedElse"></div>
+          <ng-template #nestedThen><span id="numValueWeight">{{weight}}</span><br>gram</ng-template>
+          <ng-template #nestedElse><span id="numValueWeight">{{weight}}</span><br>grams</ng-template>
+        </ng-template>
+        <ng-template #elseBlock1><span id="numValueWeight">100</span><br>grams</ng-template>
       </ion-col>
       <ion-col class="fact ion-text-center">
         <div *ngIf="fact !== undefined && fact !== ''; then thenBlock2 else elseBlock2"></div>

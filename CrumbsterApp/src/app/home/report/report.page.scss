@@ -6,32 +6,37 @@ ion-back-button {
   color: #f8f6e7;
 }
 
+.weight,
+.fact,
+.tip {
+  position: absolute;
+  color: #0f4e7d;
+  font-family: "NyataRegular", "sans-serif";
+}
+
 // Configured for Oppo A5 2020
 .weight {
-  position: absolute;
-  color: black;
   font-size: 1em;
-  font-family: "NyataRegular";
-  line-height: 1.2;
+  line-height: 1.05;
   width: 100px;
-  top: 20.5%;
+  top: 21%;
   left: 46%;
 }
 
+#numValueWeight {
+  font-family: "Abyss", "sans-serif";
+}
+
 .fact {
-  position: absolute;
-  color: black;
-  font-size: 0.55em;
+  font-size: 0.6em;
   width: 100px;
-  top: 42%;
+  top: 41.5%;
   left: 15%;
 }
 
 .tip {
-  position: absolute;
-  color: black;
   font-size: 0.40em;
   width: 110px;
-  top: 53.5%;
+  top: 53%;
   left: 53%;
 }
