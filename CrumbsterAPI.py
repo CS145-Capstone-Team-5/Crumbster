@@ -38,7 +38,7 @@ class Log(Resource):
 
         if (newLog-oldLog) >= 100:
             overNotif(str(newLog-oldLog))
-        else:
+        elif (newLog-oldLog) > 0:
             putNotif(str(newLog-oldLog))
         if newLog >= 3000:
             maxNotif()
@@ -53,7 +53,7 @@ api.add_resource(Log, '/log')
 scheduler = BackgroundScheduler()
 
 #trigger = CronTrigger(year="*", month="*", day="*", hour="18", minute="0", second="0")
-scheduler.add_job(dailyNotif, 'interval', minutes=1)
+scheduler.add_job(dailyNotif, 'interval', minutes=5)
 scheduler.start()
 
 if __name__ == '__main__':
