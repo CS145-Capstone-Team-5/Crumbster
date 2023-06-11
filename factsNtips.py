@@ -22,7 +22,7 @@ tips = {
     'tip1': {'tip': "Preplan and write your shopping list before going to the grocery store. As you write your list, think about what meals you will be preparing the following week, and check your fridge to see what items you already have. - FDA"},
     'tip2': {'tip': "When at the store, buy only what you need and stick to your shopping list. Be careful when buying in bulk, especially with items that have a limited shelf life. - FDA"},
     'tip3': {'tip': "Prepared too much food for a party at your home? Pack extras in containers for guests to take home or take some over to a neighbor as a nice gesture. - FDA"},
-    'tip4': {'tip': "Buy “ugly produce” or oddly-shaped produce, which are just as nutritious; those will end up in the thrash if not purchased. - WWF Philippines"},
+    'tip4': {'tip': "Buy “ugly produce” or oddly-shaped produce, which are just as nutritious; those will end up in the trash if not purchased. - WWF Philippines"},
     'tip5': {'tip': "Plan your meals and create a shopping list to avoid buying what is not needed that will be thrown away. Practice FIFO (first in, first out) to avoid food spoilage. - WWF Philippines"},
     'tip6': {'tip': "Know your family’s serving size to reduce what you throw away after a meal. - WWF Philippines"},
     'tip7': {'tip': "Cook leftovers, transforming them into another dish. - WWF Philippines"},
