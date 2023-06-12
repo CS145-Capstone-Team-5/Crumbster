@@ -31,6 +31,17 @@ def overNotif(n):
     print('Successfully sent message (over):', msg, response)
 
 
+def putNotif(n):
+    msg = "You've added "+n+"g of waste!"
+    message = messaging.Message(
+        notification=_messaging_utils.Notification('Crumbster Alert', msg),
+        token=registration_token,
+    )
+
+    response = messaging.send(message)
+    print('Successfully sent message (put):', msg, response)
+
+
 def maxNotif():
     msg = "You've reached the maximum weight capacity of your waste bin!"
     message = messaging.Message(

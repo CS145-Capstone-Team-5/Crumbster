@@ -52,7 +52,11 @@ api.add_resource(Log, '/log')
 # Sending a notification every specified interval/at a specific time daily
 scheduler = BackgroundScheduler()
 
+# Sends the daily notification to a specific time
 #trigger = CronTrigger(year="*", month="*", day="*", hour="18", minute="0", second="0")
+#scheduler.add_job(dailyNotif, trigger=trigger, name="daily notification")
+
+# For testing purposes, sends a notification at an interval of every 5 minutes
 scheduler.add_job(dailyNotif, 'interval', minutes=5)
 scheduler.start()
 
@@ -61,5 +65,5 @@ if __name__ == '__main__':
 
 
 ## COMMAND TO RUN (on Windows Terminal):
-#   >> python -m flask --app CrumbsterAPI run --host=192.168.68.107
-#   note: replace 192.168.68.107 with IPv4 address of network from device's POV
+#   >> python -m flask --app CrumbsterAPI run --host=192.168.68.113
+#   note: replace 192.168.68.113 with IPv4 address of network from device's POV
