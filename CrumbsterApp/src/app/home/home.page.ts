@@ -19,8 +19,8 @@ export class HomePage {
   private date: Date = new Date();
   public currentHour: number = this.date.getHours();
   public currentMinute: number = this.date.getMinutes();
-  public cutoffHour: number = 23;
-  public cutoffMinute: number = 43;
+  public cutoffHour: number = 1;
+  public cutoffMinute: number = 0;
   public visibleAlert: boolean = false;
 
   public token: string = "";

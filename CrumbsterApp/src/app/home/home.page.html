@@ -10,8 +10,18 @@
           <div class="bannerContainer">
             <ion-img src="assets/homepageElements/alertElements/alertWarningIcon.png" class="alert"
               id="warningIcon"></ion-img>
-            <div id="alertMessage">Oops, the report is not yet ready! <br> Come back at {{cutoffHour}}:{{cutoffMinute}}!
-            </div>
+            <div *ngIf="cutoffMinute < 10; then oneDigitMin else twoDigitsMin"></div>
+            <ng-template #oneDigitMin>
+              <div id="alertMessage">Oops, the report is not yet ready! <br> Come back at
+                {{cutoffHour}}:0{{cutoffMinute}}!
+              </div>
+            </ng-template>
+            <ng-template #twoDigitsMin>
+              <div id="alertMessage">Oops, the report is not yet ready! <br> Come back at
+                {{cutoffHour}}:{{cutoffMinute}}!
+              </div>
+            </ng-template>
+
             <ion-img src="assets/homepageElements/alertElements/alertCloseIcon.png" class="alert" id="closeIcon"
               (click)="removeAlert()"></ion-img>
           </div>
