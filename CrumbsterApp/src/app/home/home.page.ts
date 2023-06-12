@@ -17,8 +17,10 @@ import { IonicBackendService } from '../ionic-backend.service';
 export class HomePage {
   // App changes depending on the current time of the day
   private date: Date = new Date();
-  public currentTime: number = this.date.getHours();
-  public cutoffTime: number = 1;
+  public currentHour: number = this.date.getHours();
+  public currentMinute: number = this.date.getMinutes();
+  public cutoffHour: number = 23;
+  public cutoffMinute: number = 43;
   public visibleAlert: boolean = false;
 
   public token: string = "";

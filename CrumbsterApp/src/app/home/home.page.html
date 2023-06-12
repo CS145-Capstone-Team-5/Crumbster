@@ -7,8 +7,14 @@
         <ng-template #showAlertBlock>
           <ion-img src="assets/homepageElements/alertElements/alertBackground.png" class="alert" id="alertBanner"
             alt="Alert"></ion-img>
-          <ion-img src="assets/homepageElements/alertElements/alertCloseIcon.png" class="alert" id="closeIcon"
-            (click)="removeAlert()"></ion-img>
+          <div class="bannerContainer">
+            <ion-img src="assets/homepageElements/alertElements/alertWarningIcon.png" class="alert"
+              id="warningIcon"></ion-img>
+            <div id="alertMessage">Oops, the report is not yet ready! <br> Come back at {{cutoffHour}}:{{cutoffMinute}}!
+            </div>
+            <ion-img src="assets/homepageElements/alertElements/alertCloseIcon.png" class="alert" id="closeIcon"
+              (click)="removeAlert()"></ion-img>
+          </div>
         </ng-template>
       </ion-col>
     </ion-row>
@@ -31,16 +37,18 @@
     </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col class="buttonContainer" size-xs="8" size-sm="4">
-        <div *ngIf="currentTime >= cutoffTime; then thenBlock else elseBlock"></div>
+        <div *ngIf="(currentHour > cutoffHour) ||
+          (currentHour === cutoffHour && currentMinute >= cutoffMinute);
+          then thenBlock else elseBlock"></div>
         <ng-template #thenBlock>
           <ion-img src="assets/homepageElements/generateReportButton.png" id="reportButton"
             [routerLink]="['./', 'report']" alt="Generate Daily Report Button"></ion-img>
-          <div id="buttonLabel" [routerLink]="['./', 'report']">generate daily report</div>
+          <div id="buttonLabel" [routerLink]="['./', 'report']">generate report</div>
         </ng-template>
         <ng-template #elseBlock>
           <ion-img src="assets/homepageElements/generateReportButton.png" id="reportButton"
             alt="Generate Daily Report Button" (click)="addAlert()"></ion-img>
-          <div id="buttonLabel" (click)="addAlert()">generate daily report</div>
+          <div id="buttonLabel" (click)="addAlert()">generate report</div>
         </ng-template>
       </ion-col>
     </ion-row>
