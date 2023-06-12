@@ -14,7 +14,7 @@
           <ng-template #nestedThen><span id="numValueWeight">{{weight}}</span><br>gram</ng-template>
           <ng-template #nestedElse><span id="numValueWeight">{{weight}}</span><br>grams</ng-template>
         </ng-template>
-        <ng-template #elseBlock1><span id="numValueWeight">100</span><br>grams</ng-template>
+        <ng-template #elseBlock1><span id="numValueWeight">0</span><br>grams</ng-template>
       </ion-col>
       <ion-col class="fact ion-text-center">
         <div *ngIf="fact !== undefined && fact !== ''; then thenBlock2 else elseBlock2"></div>
