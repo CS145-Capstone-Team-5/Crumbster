@@ -14,7 +14,7 @@ export interface Data {
 })
 export class IonicBackendService {
   // URL is the IP address. Change this when needed and always retain :5000 (end)
-  private url: string = 'IP ADDRESS'
+  private url: string = 'http://192.168.254.100:5000'
   constructor(private http: HttpClient) { }
 
   getApi(): Observable<Data> {
