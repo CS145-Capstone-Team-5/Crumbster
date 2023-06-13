@@ -38,7 +38,7 @@ class Log(Resource):
 
         if (newLog-oldLog) >= 100:
             overNotif(str(newLog-oldLog))
-        elif (newLog-oldLog) > 0:
+        elif (newLog-oldLog) >= 10:
             putNotif(str(newLog-oldLog))
         if newLog >= 3000:
             maxNotif()
