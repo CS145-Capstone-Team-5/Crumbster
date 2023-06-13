@@ -45,30 +45,26 @@ void loop() {
   weight = scale.get_units(5);
   Serial.print("Weight:\t");
   //Serial.print(weight, 0);
-  Serial.print(weight);
-  Serial.println(" g");
+  //Serial.print(weight);
+  //Serial.println(" g");
 
   int finalWeight = weight;
 
-  Serial.println(finalWeight);
+  Serial.print(finalWeight);
+  Serial.println(" g");
 
-  int contentLength = 8 + String(weight,0).length();
-  //Serial.println(String(8 + String(weight,0).length()));
+  int contentLength = 8 + String(finalWeight).length();
   if (client.connect(server,5000))
-  {
-    
-    //Serial.println(String(String(weight,0).length()));
-    
+  {    
     client.println("PUT /log HTTP/1.1");
     client.println("Host: 192.168.254.100:5000");
     client.println("Content-Type: application/x-www-form-urlencoded");
-    //Serial.println("Content-Length: " + String(contentLength));
     client.println("Content-Length: " + String(contentLength));
     client.println();
     client.print("dataLog=");
     client.println(finalWeight);
   }
   
-  delay(2000);
+  delay(3000);
 }
 
