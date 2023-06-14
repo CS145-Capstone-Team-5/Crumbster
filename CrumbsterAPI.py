@@ -40,7 +40,7 @@ class Log(Resource):
             overNotif(str(newLog-oldLog))
         elif (newLog-oldLog) >= 10:
             putNotif(str(newLog-oldLog))
-        if newLog >= 3000:
+        if newLog >= 1000:
             maxNotif()
         
         wasteLvls['curLvl'] = {'dataLog': str(newLog)}
@@ -57,7 +57,7 @@ scheduler = BackgroundScheduler()
 #scheduler.add_job(dailyNotif, trigger=trigger, name="daily notification")
 
 # For testing purposes, sends a notification at an interval of every 5 minutes
-scheduler.add_job(dailyNotif, 'interval', minutes=5)
+scheduler.add_job(dailyNotif, 'interval', minutes=1)
 scheduler.start()
 
 if __name__ == '__main__':
