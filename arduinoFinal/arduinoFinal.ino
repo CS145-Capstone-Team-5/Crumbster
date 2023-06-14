@@ -65,6 +65,6 @@ void loop() {
     client.println(finalWeight);
   }
   
-  delay(3000);
+  delay(5000);
 }
 
